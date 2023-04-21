@@ -1,0 +1,77 @@
+---
+title: "Multi-language Data Viz"
+author: "Adam Bushman"
+format: html
+---
+
+## Line Chart
+
+::: {.panel-tabset}
+
+## R
+
+Using the {ggplot2} library to create a basic basic line chart
+
+```{r}
+
+library('ggplot2')
+
+r_wd = read.csv("world_bank_data.csv")
+
+ggplot(
+  r_wd[r_wd$country_code == "USA", ], 
+  aes(
+    year, population
+  )
+) +
+  geom_line(
+    alpha = 0.3, 
+    color = "blue2"
+  )
+
+```
+
+## Python
+
+Using the {Matplotlib} library to create a basic basic line chart
+
+```{python}
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+py_wd = (
+  pd.read_csv("world_bank_data.csv")
+    .query('country_code == "USA"')
+)
+
+plt.plot(py_wd["year"], py_wd["population"])
+
+plt.show()
+
+```
+
+
+## Observable
+
+Using the {Plot} library to create a basic basic line chart
+
+```{ojs}
+
+ojs_wd = FileAttachment("world_bank_data.csv").csv({typed: true})
+
+Plot.plot({
+  y: {
+    grid: true
+  }, 
+  marks: [
+    Plot.line(
+      ojs_wd.map(d => d.country_code == "USA"), 
+      {x: "year", y: "population"}
+    )
+  ]
+})
+  
+```
+
+:::

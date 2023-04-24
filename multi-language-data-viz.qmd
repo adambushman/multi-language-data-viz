@@ -66,7 +66,7 @@ Plot.plot({
   }, 
   marks: [
     Plot.line(
-      ojs_wd.map(d => d.country_code == "USA"), 
+      ojs_wd.filter(d => d.country_code == "USA"), 
       {x: "year", y: "population"}
     )
   ]

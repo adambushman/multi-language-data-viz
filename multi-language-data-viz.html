@@ -190,7 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> </span>
 <span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
 <span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>      ojs_wd<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">country_code</span> <span class="op">==</span> <span class="st">"USA"</span>)<span class="op">,</span> </span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ojs_wd</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">country_code</span> <span class="op">==</span> <span class="st">"USA"</span>)<span class="op">,</span> </span>
 <span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>      {<span class="dt">x</span><span class="op">:</span> <span class="st">"year"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"population"</span>}</span>
 <span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  ]</span>
@@ -218,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </main>
 <!-- /main column -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nojs_wd = FileAttachment(\"world_bank_data.csv\").csv({typed: true})\n\nPlot.plot({\n  y: {\n    grid: true\n  }, \n  marks: [\n    Plot.line(\n      ojs_wd.map(d => d.country_code == \"USA\"), \n      {x: \"year\", y: \"population\"}\n    )\n  ]\n})\n  \n"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nojs_wd = FileAttachment(\"world_bank_data.csv\").csv({typed: true})\n\nPlot.plot({\n  y: {\n    grid: true\n  }, \n  marks: [\n    Plot.line(\n      ojs_wd(d => d.country_code == \"USA\"), \n      {x: \"year\", y: \"population\"}\n    )\n  ]\n})\n  \n"}]}
 </script>
 <script type="module">
 window._ojs.paths.runtimeToDoc = "../../..";
